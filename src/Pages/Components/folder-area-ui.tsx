@@ -5,11 +5,21 @@ import {
   move_To_NextLocation,
 } from '../modules/Redux/UserRepositorySlicer';
 import { RepositoryInfo } from '../modules/Redux/UserRepositorySlicer';
+import { Menu, Dropdown } from 'antd';
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// FILE UI //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export const File = ({ info }: any) => {
   // console.log('File-UI recieved data ', fileInfo);
   const fileName = info.name;
   const { syncStatus } = info;
+  const menu = (
+    <Menu>
+      <Menu.Item key="1">Date created</Menu.Item>
+      <Menu.Item key="2">Date modified</Menu.Item>
+      <Menu.Item key="3">3rd menu item</Menu.Item>
+    </Menu>
+  );
+
 
   return (
     <div

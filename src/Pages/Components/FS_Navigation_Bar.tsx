@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch, nanoid } from '@reduxjs/toolkit';
 import { Breadcrumb } from 'antd';
-import {
-  RepositoryInfo,
-  goBack_From_CurrentLocation,
-} from '../modules/Redux/UserRepositorySlicer';
+ import {RepositoryInfo,
+        goBack_From_CurrentLocation,
+  } from '../modules/Redux/UserRepositorySlicer';
 
 const updateLocation = (
   currentDirLocation: Array<String>,

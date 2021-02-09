@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Modal, Col, Button, Space } from 'antd';
+import { Modal, Col, Button, Space, Divider } from 'antd';
 import { Dispatch } from 'redux';
 import { History } from 'history';
 import {
@@ -11,6 +11,10 @@ import {
 import runScript from './modules/Run-Script';
 import log from './modules/log';
 import { CCODES } from './modules/get_AppData';
+import GoogleDrivePNG from '../../assets/icons/googledriveicon.png';
+import { Particles } from 'react-particles-js';
+import particlesConfig from 'C:/FVS-GIT-CLONE/src/configParticles.js'
+
 
 const RunLoginScript = async (
   dispatch: Dispatch<any>,
@@ -75,6 +79,7 @@ const Login = () => {
   const history = useHistory();
 
   return (
+
     <div
       style={{
         width: '100%',
@@ -83,21 +88,36 @@ const Login = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+
       }}
     >
+ <div style={{position: 'absolute'}}>
+
       <Col
         className="component-bg"
+
+
         style={{
-          width: '500px',
-          height: '500px',
+          width: '300px',
+          height: '200px',
+        alignItems: 'center'
         }}
       >
-        <Space align="center" style={{ margin: 'auto' }}>
-          <Button onClick={() => RunLoginScript(dispatch, history)}>
-            Connect : Google Drive
+        <Divider className="Divider-align"/>
+         <div className="space-align-block">
+        <Space align="center">
+
+            <Button onClick={() => RunLoginScript(dispatch, history)} >
+              <img src={GoogleDrivePNG} className="Image-Align-google"/>&nbsp;
+            Login with GoogleDrive
           </Button>
-        </Space>
+         </Space>
+         </div>
       </Col>
+    </div>
+        <div>
+    <Particles height="100vh" width="100vw" params={particlesConfig}></Particles>
+    </div>
     </div>
   );
 };
